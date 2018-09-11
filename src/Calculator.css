@@ -1,5 +1,9 @@
 :root {
-  --operator-color: #85E28D;
+  --main-color: #079992;
+  --secondary-color: #38ada9;
+  --btn-color: #dfe4ea;
+  --btn-active-color: rgb(212, 212, 212);
+  --num-key--color: #f5f6fa;
 }
 
 .calculator {
@@ -42,20 +46,24 @@
 }
 
 .btn {
-  background-color: #F2F2F2;
-  border: 1px solid #999;
+  background-color: var(--btn-color);
+  border: 1px solid #bbb;
   text-align: center;
 }
 
+.numeric {
+  background-color: var(--num-key--color);
+}
+
 .btn:active {
-  background-color: rgb(212, 212, 212);
+  background-color: var(--btn-active-color);
 }
 
 .operator {
-  background-color: var(--operator-color);
+  background-color: var(--main-color);
   color: white;
 }
 
 .operator:active {
-  background-color: rgb(255, 179, 38);
+  background-color: var(--secondary-color);
 }

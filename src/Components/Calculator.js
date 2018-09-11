@@ -155,7 +155,7 @@ export default class Calculator extends Component {
 
   handleDot() {
     if (!this.state.current.includes('.')) {
-      this.append('.');
+      this.append(this.state.current === '0' ? '0.' : '.');
     }
   }
 
@@ -165,8 +165,12 @@ export default class Calculator extends Component {
       .replace('NaN', 'math error');
   }
 
+  isNumeric(key) {
+    return '.0123456789'.includes(key);
+  }
+
   handleKey(key) {
-    if ('0123456789'.includes(key)) {
+    if (this.isNumeric(key)) {
       if (this.state.should_push) {
         this.push(this.value());
         this.clear();
@@ -195,7 +199,7 @@ export default class Calculator extends Component {
             return <CalculatorOperator handleKey={handler} key={key} operation={key} />
           }
 
-          return <CalculatorButton handleKey={handler} key={key} text={key} />
+          return <CalculatorButton numeric={this.isNumeric(key)} handleKey={handler} key={key} text={key} />
         })}
       </div>
     );
