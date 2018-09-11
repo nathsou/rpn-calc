@@ -1,0 +1,8 @@
+{
+  "short_name": "rpn-calc",
+  "name": "Reverse Polish Notation Calculator",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
